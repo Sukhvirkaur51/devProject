@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+
+    DevConnectors</a>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link active" href="#">Developers</a>
+      <a class="nav-item nav-link" routerLink="/register">Register</a>
+      <a class="nav-item nav-link" routerLink="login">Login</a>
+
+    </div>
+  </div>
+</nav>
+
+<mat-card class="mat1">
+
+  <form #userform="ngForm" name="form"(ngSubmit)=" userform.form.valid && getvalues(userform)" novalidate>
+    <h1 class="sign">Sign In </h1>
+   <br> <br>
+   <h1 class="reg">Sign Into your Account </h1>
+   <br> <br>
+
+      <mat-form-field>
+        <input
+        type="email"
+        matInput
+        placeholder="Your Email"
+        name="email"
+        #email="ngModel"
+        email
+        [(ngModel)]="model.email"
+        required
+        minlength="5"
+        [ngClass]="{'is-invalid':userform.submitted && email.invalid}">
+      </mat-form-field>
+
+      <mat-error *ngIf= "userform.submitted && email.invalid">
+        <mat-error *ngIf="email.errors?.required">
+          email should be entered
+        </mat-error>
+
+        <mat-error *ngIf="email.errors?.email">
+         invalid format
+        </mat-error>
+
+        <mat-error *ngIf="email.errors?.minlength">
+         email should be greater than 5 charaters
+        </mat-error>
+      </mat-error>
+      <br><br>
+
+      <mat-form-field>
+        <input
+        type="password"
+        matInput
+        placeholder="Your password"
+        [(ngModel)]="model.password"
+      #password="ngModel"
+      name="password"
+      required
+      [ngClass]="{'is-invalid':userform.submitted && password.invalid}"
+      minlength=5>
+      </mat-form-field>
+
+      <mat-error *ngIf= "userform.submitted && password.invalid">
+        <mat-error *ngIf="password.errors?.required">
+          password should be entered
+        </mat-error>
+
+        <mat-error *ngIf="password.errors?.minlength">
+         password should be greater than 5 charaters
+        </mat-error>
+      </mat-error>
+      <br><br>
+
+
+
+      <button type="submit" mat-raised-button color="primary">Login</button>
+      <br><br>
+      <p>Don't have a account? <a href="http://localhost:4200/register">Sign Up</a></p>
+
+  </form>
+</mat-card>
+
+<router-outlet></router-outlet>

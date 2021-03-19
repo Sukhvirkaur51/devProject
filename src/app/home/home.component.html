@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+
+    DevConnectors</a>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link active" href="#">Developers</a>
+      <a class="nav-item nav-link" routerLink="register">Register</a>
+      <a class="nav-item nav-link" routerLink="login">Login</a>
+
+    </div>
+  </div>
+</nav>
+
+
+  <h1 class="dc">Developer Connector</h1>
+  <p class="dc1">Create a developer profile/portfolio, share posts and get help from other developers</p>
+
+
+<button class="blogin" type="submit" mat-raised-button color="primary" (click)="getclick()"> Sign Up </button>
+<button class="bsignup" type="submit" mat-raised-button (click)="getclick1()"> Login </button>
+
+<img src="assets/image4.jpg" class="bg" >
+
+<router-outlet></router-outlet>
+

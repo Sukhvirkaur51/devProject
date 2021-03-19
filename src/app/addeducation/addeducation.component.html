@@ -1,0 +1,114 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+
+    DevConnectors</a>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link active" href="#">Developers</a>
+      <a class="nav-item nav-link" routerLink="/post">Post</a>
+      <a class="nav-item nav-link" routerLink="/dashboard1">Dashboard</a>
+      <a class="nav-item nav-link" routerLink="/">Logout</a>
+
+
+    </div>
+  </div>
+</nav>
+
+    <mat-card class="mat1">
+    <form #userform="ngForm" name="form"(ngSubmit)=" userform.form.valid && getvalues(userform)" novalidate>
+
+      <h1 class="profile">Add An Education </h1>
+     <br>
+     <h1 class="info">Add any school, bootcamp, etc that you have attended</h1>
+
+     <br><br>
+
+     <mat-form-field>
+      <input
+      type="text"
+      matInput
+      placeholder="School Or Bootcamp"
+      [(ngModel)]="model.school"
+      required
+      name="school"
+      #school="ngModel"
+      [ngClass]="{'is-invalid':userform.submitted && school.invalid}">
+    </mat-form-field>
+
+    <mat-error *ngIf= "userform.submitted && school.invalid">
+      <mat-error *ngIf="school.errors?.required">
+        School should be entered
+      </mat-error>
+    </mat-error>
+    <br> <br>
+
+
+      <mat-form-field>
+          <input
+          type="text"
+          matInput
+          placeholder="Degree Or Certificate"
+          [(ngModel)]="model.deg"
+          required
+          name="deg"
+          #deg="ngModel"
+          [ngClass]="{'is-invalid':userform.submitted && deg.invalid}">
+        </mat-form-field>
+
+        <mat-error *ngIf= "userform.submitted && deg.invalid">
+          <mat-error *ngIf="deg.errors?.required">
+           Degree should be entered
+          </mat-error>
+        </mat-error>
+        <br> <br>
+
+
+
+        <mat-form-field>
+          <input
+          type="text"
+          matInput
+          placeholder="Field Of Study"
+          [(ngModel)]="model.fos"
+          required
+          name="fos"
+          #fos="ngModel"
+          [ngClass]="{'is-invalid':userform.submitted && fos.invalid}">
+        </mat-form-field>
+
+        <mat-error *ngIf= "userform.submitted && fos.invalid">
+          <mat-error *ngIf="fos.errors?.required">
+          Field Of Study should be entered
+          </mat-error>
+        </mat-error>
+        <br> <br>
+
+         <mat-form-field appearance="fill">
+          <mat-label>From date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <br><br>
+
+        <mat-checkbox class="checkbox">Current School or Bootcamp</mat-checkbox><br><br>
+
+        <mat-form-field appearance="fill">
+          <mat-label>To date</mat-label>
+          <input matInput [matDatepicker]="picker1">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <br><br>
+
+        <textarea class="area">Program Description</textarea><br><br>
+
+
+
+        <button type="submit"  class="btn2" mat-raised-button color="primary">Submit</button>
+        <button type="button" class="btn1" mat-raised-button (click)="getvalues1()">Go Back</button>
+
+
+    </form>
+  </mat-card>

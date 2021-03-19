@@ -1,0 +1,24 @@
+.sign{
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  font-size: 40px;
+  font-weight:bold;
+  color:rgb(70, 145, 189);
+
+
+
+}
+
+.reg{
+  position:absolute;
+  top:15%;
+  left:5%;
+  font-size: 30px;
+}
+
+.mat1{
+  padding: 5%;
+}
+
+

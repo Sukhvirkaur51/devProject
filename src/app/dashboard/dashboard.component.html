@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+
+    DevConnectors</a>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link active" href="#">Developers</a>
+      <a class="nav-item nav-link" routerLink="/post">Post</a>
+      <a class="nav-item nav-link" routerLink="/dashboard1">Dashboard</a>
+      <a class="nav-item nav-link" routerLink="/">logout</a>
+
+
+    </div>
+  </div>
+</nav>
+<br>
+<mat-card>
+<h1 class="dash">Dashboard</h1>
+<h1 class="user">Hi! {{username}}</h1>
+<h3 class="info">You have not yet setup a profile, Please add Some info
+</h3>
+<button class="btn" type="submit" mat-raised-button color="primary" (click)="getvalue()">Create Profile</button>
+</mat-card>
+

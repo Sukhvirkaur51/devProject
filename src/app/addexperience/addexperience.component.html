@@ -1,0 +1,115 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+
+    DevConnectors</a>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link active" href="#">Developers</a>
+      <a class="nav-item nav-link" routerLink="/post">Post</a>
+      <a class="nav-item nav-link" routerLink="/dashboard1">Dashboard</a>
+      <a class="nav-item nav-link" routerLink="/">Logout</a>
+
+
+    </div>
+  </div>
+</nav>
+
+    <mat-card class="mat1">
+    <form #userform="ngForm" name="form"(ngSubmit)=" userform.form.valid && getvalues(userform)" novalidate>
+
+      <h1 class="profile">Add An Experience </h1>
+     <br>
+     <h1 class="info">Add any developer/programming positions that you have had in the past</h1>
+
+     <br><br>
+
+     <mat-form-field>
+      <input
+      type="text"
+      matInput
+      placeholder="Job Title"
+      [(ngModel)]="model.jobtitle"
+      required
+      name="jobtitle"
+      #jobtitle="ngModel"
+      [ngClass]="{'is-invalid':userform.submitted && jobtitle.invalid}">
+    </mat-form-field>
+
+    <mat-error *ngIf= "userform.submitted && jobtitle.invalid">
+      <mat-error *ngIf="jobtitle.errors?.required">
+        Job Title should be entered
+      </mat-error>
+    </mat-error>
+    <br> <br>
+
+
+      <mat-form-field>
+          <input
+          type="text"
+          matInput
+          placeholder="Company"
+          [(ngModel)]="model.company"
+          required
+          name="company"
+          #company="ngModel"
+          [ngClass]="{'is-invalid':userform.submitted && company.invalid}">
+        </mat-form-field>
+
+        <mat-error *ngIf= "userform.submitted && company.invalid">
+          <mat-error *ngIf="company.errors?.required">
+            company should be entered
+          </mat-error>
+        </mat-error>
+        <br> <br>
+
+
+
+        <mat-form-field>
+          <input
+          type="text"
+          matInput
+          placeholder="Location"
+          [(ngModel)]="model.location"
+          required
+          name="location"
+          #location="ngModel"
+          [ngClass]="{'is-invalid':userform.submitted && location.invalid}">
+        </mat-form-field>
+
+        <mat-error *ngIf= "userform.submitted && location.invalid">
+          <mat-error *ngIf="location.errors?.required">
+            location should be entered
+          </mat-error>
+        </mat-error>
+        <br> <br>
+
+         <mat-form-field appearance="fill">
+          <mat-label>From date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <br><br>
+
+        <mat-checkbox class="checkbox">Current Job</mat-checkbox><br><br>
+
+        <mat-form-field appearance="fill">
+          <mat-label>To date</mat-label>
+          <input matInput [matDatepicker]="picker1">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        <br><br>
+
+        <textarea class="area">Job Description</textarea><br><br>
+
+
+
+        <button type="submit"  class="btn2" mat-raised-button color="primary">Submit</button>
+        <button type="button" class="btn1" mat-raised-button (click)="getvalues1()">Go Back</button>
+
+
+    </form>
+  </mat-card>
+

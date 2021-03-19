@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+
+    DevConnectors</a>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link active" href="#">Developers</a>
+      <a class="nav-item nav-link" routerLink="/post">Post</a>
+      <a class="nav-item nav-link" routerLink="/dashboard">Dashboard</a>
+      <a class="nav-item nav-link" routerLink="/">logout</a>
+  </div>
+  </div>
+</nav>
+<br>
+
+<mat-card>
+<h1 class="dash">Dashboard</h1>
+<h1 class="user">Welcome {{username}}</h1>
+
+<button class="btn" type="submit" mat-raised-button (click)="getvalues()" >Edit Profile</button>
+<button class="btn1" type="submit" mat-raised-button (click)="getvalues1()">Add Experience</button>
+<button class="btn2" type="submit" mat-raised-button (click)="getvalues2()" >Add Education</button><br>
+
+<p class="text"> Experience Credentials</p>
+
+<table class= "table">
+<tr>
+  <th>Company</th>
+  <th>Title</th>
+  <th>Years</th>
+</tr>
+</table>
+
+
+
+<p class="text"> Education Credentials</p>
+
+<table class= "table">
+<tr>
+  <th>School</th>
+  <th>Degree</th>
+  <th>Years</th>
+</tr>
+
+</table>
+<br>
+
+
+<button class="btn" type="submit" mat-raised-button color="warn" (click)="delete()">Delete my account</button>
+</mat-card>

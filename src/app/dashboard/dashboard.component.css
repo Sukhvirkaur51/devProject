@@ -1,0 +1,21 @@
+.dash{
+padding-left: 25px;
+font-weight: bold;
+color: rgb(0, 195, 255);
+font-size: 35px;
+}
+
+.user{
+  padding-left: 25px;
+}
+
+.info{
+  padding-left: 25px;
+}
+
+.btn{
+  left: 25px;
+}
+
+
+

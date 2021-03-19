@@ -1,0 +1,36 @@
+.mat-form-field{
+  width: 80%;
+  padding-left: 25px;
+}
+
+.btn1{
+
+  margin-left: 30px;
+}
+
+.btn2{
+  margin-left: 22px;
+}
+
+.profile{
+  padding-left: 25px;
+font-weight: bold;
+font-size: 40px;
+color: rgb(0, 195, 255);
+
+}
+
+.info{
+  padding-left: 25px;
+
+}
+
+.checkbox{
+  padding-left: 25px;
+}
+
+.area{
+  margin-left:25px;
+  height:50%;
+  width: 78%;
+}
